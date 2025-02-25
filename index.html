@@ -1,58 +1,168 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Three Divs: Left, Center, Right</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz</title>
   <style>
-    /* Style for the left div */
-    .left-div {
-      position: fixed;              /* Position relative to the viewport */
-      left: 0;                      /* Align to the left edge */
-      top: 50%;                     /* Position at 50% of the viewport height */
-      transform: translateY(-50%);  /* Adjust to center vertically */
-      width: 200px;
-      height: 150px;
-      border: 2px solid blue;       /* Visible blue border */
-      background-color: lightblue;  /* Background for better visibility */
-      text-align: center;           /* Center text inside */
-      padding: 10px;
-      box-sizing: border-box;       /* Ensure padding is included in the width */
+    body {
+      font-family: sans-serif;
+      color: indigo;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: url('world-map.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      min-height: 100vh;
     }
 
-    /* Style for the center div */
-    .center-div {
-      position: fixed;                /* Position relative to the viewport */
-      left: 50%;                      /* Start at 50% of the viewport width */
-      top: 50%;                       /* Start at 50% of the viewport height */
-      transform: translate(-50%, -50%); /* Adjust to center both horizontally and vertically */
-      width: 200px;
-      height: 150px;
-      border: 2px solid red;          /* Visible red border */
-      background-color: lightcoral;   /* Background for better visibility */
-      text-align: center;             /* Center text inside */
-      padding: 10px;
-      box-sizing: border-box;
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
     }
 
-    /* Style for the right div */
-    .right-di {
-      position: fixed;              /* Position relative to the viewport */
-      right: 0;                     /* Align to the right edge */
-      top: 50%;                     /* Position at 50% of the viewport height */
-      transform: translateY(-50%);  /* Adjust to center vertically */
-      width: 200px;
-      height: 150px;
-      border: 2px solid green;      /* Visible green border */
-      background-color: lightgreen; /* Background for better visibility */
-      text-align: center;           /* Center text inside */
-      padding: 10px;
-      box-sizing: border-box;
+    body * {
+      position: relative;
+      z-index: 1;
     }
+
+    button {
+      border: none;
+      color: inherit;
+      padding: 8px 16px;
+      transition: 0.5s;
+    }
+
+    button:hover {
+      cursor: pointer;
+      padding: 8px 24px;
+    }
+
+    button.clicked.correct {
+      background: darkgreen;
+    }
+
+    button.clicked:not(.correct) {
+      background: darkred;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      position: relative;
+
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 16px 32px;
+      border-radius: 8px;
+      display: inline-block;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      line-height: 1.2;
+      color: transparent;
+    }
+
+    h1::before {
+      content: attr(data-text);
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: linear-gradient(90deg,
+      #0057B7,  /* Ukraine Blue */
+      #FFD700,  /* Ukraine Yellow */
+      #FF0000,  /* Red */
+      #FFFFFF,  /* White */
+      #008000,  /* Green */
+      #000000   /* Black */
+      );
+
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    h2 {
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 16px 32px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
   </style>
 </head>
 <body>
-<div class="left-div">Left Div</div>
-<div class="center-div">Center Div</div>
-<div class="right-di">Right Div</div>
+<h1 data-text="Geography Quiz">Geography Quiz</h1>
+
+<div class="question">
+  <h2>Which country is Chad?</h2>
+  <button onclick="check(this)">
+    <img src="North-America_(transparent).png" alt="Button Image" width="125" height="80">
+  </button>
+
+  <button onclick="check(this)" class="correct">
+    <img src="chad.png" alt="Button Image" width="50" height="80">
+  </button>
+
+  <button onclick="check(this)">
+    <img src="Namibia.png" alt="Button Image" width="85" height="80">
+
+  </button>
+</div>
+
+<div class="question">
+  <h2>What is the capital of Canada</h2>
+  <button onclick="check(this)">Montreal <br>
+    <img src="Montreal.jpg" alt="Button Image" width="125" height="80">
+
+
+  </button>
+  <button onclick="check(this)">Toronto</button>
+  <button onclick="check(this) "class="correct">Ottowa</button>
+</div>
+
+<div class="question">
+  <h2>What does the C in CSS stand for?</h2>
+  <button onclick="check(this)" class="correct">Cascading</button>
+  <button onclick="check(this)">Cat</button>
+  <button onclick="check(this)">Compounding</button>
+</div>
+
+<script>
+  function check(button) {
+    // Add class of “clicked”
+    button.classList.add("clicked");
+
+    // If button is correct
+    if (button.classList.contains("correct")) {
+      // button.style.background = "turquoise";
+    } else {
+      // button.style.background = "deeppink";
+      // button.style.color = "white";
+    }
+
+    // Find current question
+    let question = button.closest(".question");
+
+    // Find all button elements within question
+    let buttons = question.querySelectorAll("button");
+
+    // For each button on my list
+    for (let button of buttons) {
+      // Disable them
+      button.disabled = true;
+    }
+  }
+</script>
 </body>
 </html>
