@@ -38,14 +38,15 @@
         button {
             border: none;
             color: inherit;
-            padding: 8px 16px;
+            padding-top: 8px;
             transition: 0.5s;
             font-size: 64px;
+            border-radius: 15px;
         }
 
         button:hover {
             cursor: pointer;
-            padding: 8px 24px;
+            padding: 15px 15px;
         }
 
         button.clicked.correct {
@@ -103,45 +104,45 @@
         }
 
         #Montreal-label {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(201, 46, 46, 0.8);
             color: white;
             padding: 8px 12px;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 15px;
+            font-size: 25px;
             font-weight: bold;
             position: absolute;
             top: -30px;
             left: 50%;
-            transform: translateX(-50%) translateY(275%);
+            transform: translateX(-50%) translateY(225%);
             white-space: nowrap;
         }
 
 
         #Toronto-label {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(205, 197, 201, 0.8);
             color: white;
             padding: 8px 12px;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 15px;
+            font-size: 25px;
             font-weight: bold;
             position: absolute;
             top: -30px;
             left: 50%;
-            transform: translateX(-50%) translateY(275%);
+            transform: translateX(-50%) translateY(225%);
             white-space: nowrap;
         }
 
         #Ottawa-label {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(201, 46, 46, 0.8);
             color: white;
-            padding: 8px 12px;
-            border-radius: 5px;
-            font-size: 16px;
+            padding: 8px 8px;
+            border-radius: 15px;
+            font-size: 25px;
             font-weight: bold;
             position: absolute;
             top: -30px;
             left: 50%;
-            transform: translateX(-50%) translateY(275%);
+            transform: translateX(-50%) translateY(225%);
             white-space: nowrap;
         }
 
@@ -174,12 +175,12 @@
     </button>
 
     <button onclick="check(this)">
-        <img src="Montreal.jpg" alt="Button Image" width="200" height="150">
+        <img src="Toronto.jpeg" alt="Button Image" width="200" height="150">
         <span id="Toronto-label">Toronto</span>
     </button>
 
     <button onclick="check(this)" class="correct">
-        <img src="Montreal.jpg" alt="Button Image" width="200" height="150">
+        <img src="ottowa.jpg" alt="Button Image" width="200" height="150">
         <span id="Ottawa-label">Ottawa</span>
     </button>
 </div>
