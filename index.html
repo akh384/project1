@@ -51,7 +51,7 @@
     }
 
     button.clicked:not(.correct) {
-      background: deeppink;
+      background: darkred;
     }
     h1 {
       font-size: 3rem;
@@ -78,12 +78,12 @@
       justify-content: center;
 
       background: linear-gradient(90deg,
-      #0057B7,  /* Ukraine Blue */
-      #FFD700,  /* Ukraine Yellow */
-      #FF0000,  /* Red */
-      #FFFFFF,  /* White */
-      #008000,  /* Green */
-      #000000   /* Black */
+      #0057B7,
+      #FFD700,
+      #FF0000,
+      #FFFFFF,
+      #008000,
+      #000000,
       );
 
       background-clip: text;
@@ -127,8 +127,14 @@
 
 
   </button>
-  <button onclick="check(this)">Toronto</button>
-  <button onclick="check(this) "class="correct">Ottowa</button>
+  <button onclick="check(this)">Toronto <br>
+    <img src="Montreal.jpg" alt="Button Image" width="125" height="80">
+  </button>
+
+
+  <button onclick="check(this) "class="correct">Ottowa <br>
+      <img src="Montreal.jpg" alt="Button Image" width="125" height="80">
+  </button>
 </div>
 
 <div class="question">
