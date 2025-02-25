@@ -104,38 +104,9 @@
         }
 
         #Montreal-label {
-            background: rgba(201, 46, 46, 0.8);
-            color: white;
-            padding: 8px 12px;
-            border-radius: 15px;
-            font-size: 25px;
-            font-weight: bold;
-            position: absolute;
-            top: -30px;
-            left: 50%;
-            transform: translateX(-50%) translateY(225%);
-            white-space: nowrap;
-        }
-
-
-        #Toronto-label {
             background: rgba(205, 197, 201, 0.8);
             color: white;
             padding: 8px 12px;
-            border-radius: 15px;
-            font-size: 25px;
-            font-weight: bold;
-            position: absolute;
-            top: -30px;
-            left: 50%;
-            transform: translateX(-50%) translateY(225%);
-            white-space: nowrap;
-        }
-
-        #Ottawa-label {
-            background: rgba(201, 46, 46, 0.8);
-            color: white;
-            padding: 8px 8px;
             border-radius: 15px;
             font-size: 25px;
             font-weight: bold;
@@ -176,20 +147,33 @@
 
     <button onclick="check(this)">
         <img src="Toronto.jpeg" alt="Button Image" width="200" height="150">
-        <span id="Toronto-label">Toronto</span>
+        <span id="Montreal-label">Toronto</span>
     </button>
 
     <button onclick="check(this)" class="correct">
         <img src="ottowa.jpg" alt="Button Image" width="200" height="150">
-        <span id="Ottawa-label">Ottawa</span>
+        <span id="Montreal-label">Ottawa</span>
     </button>
 </div>
 
 <div class="question">
-    <h2>What does the C in CSS stand for?</h2>
-    <button onclick="check(this)" class="correct">Cascading</button>
-    <button onclick="check(this)">Cat</button>
-    <button onclick="check(this)">Compounding</button>
+    <h2>Which is the only continent without an active volcano?</h2>
+
+    <button onclick="check(this)" class="correct">
+        <img src="ottowa.jpg" alt="Button Image" width="200" height="150">
+        <span id="Montreal-label">Austrailia</span>
+    </button>
+
+    <button onclick="check(this)">
+        <img src="ottowa.jpg" alt="Button Image" width="200" height="150">
+        <span id="Montreal-label">Africa</span>
+    </button>
+
+
+    <button onclick="check(this)">
+    <img src="ottowa.jpg" alt="Button Image" width="200" height="150">
+    <span id="Montreal-label">Europe</span>
+    </button>
 </div>
 
 <script>
